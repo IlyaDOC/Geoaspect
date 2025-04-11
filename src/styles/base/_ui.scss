@@ -254,3 +254,35 @@ input[type="number"] {
 /////////////////////
 /// TYPOGRAPHY
 /////////////////////
+
+h1 {
+  font: $bold-32;
+
+  @include breakpoint(md) {
+    font: $bold-48;
+  }
+
+  @include breakpoint(lg) {
+    font: $bold-64;
+  }
+
+  @include breakpoint(xl) {
+    font: $bold-80;
+  }
+}
+
+.section-title {
+  font: $bold-30;
+
+  @include breakpoint(md) {
+    font: $bold-32;
+  }
+
+  @include breakpoint(lg) {
+    font: $bold-48;
+  }
+
+  @include breakpoint(xl) {
+    font: $bold-56;
+  }
+}

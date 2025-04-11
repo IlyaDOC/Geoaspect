@@ -8,6 +8,12 @@
   left: 0;
   top: 0;
   border-bottom: 1px solid $content-brown-border;
+  z-index: 200;
+  margin-bottom: 42px;
+
+  @include breakpoint(md) {
+    margin-bottom: 0;
+  }
 
   @include breakpoint(lg) {
     border: none;
