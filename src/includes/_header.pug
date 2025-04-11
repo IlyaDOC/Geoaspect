@@ -1,0 +1,84 @@
+block header
+    header#header.header
+        .container
+            .header__inner
+                .header__inner-top
+                    .header__socials
+                        noindex
+                            a(href="javascript:void(0)" rel="nofollow").social__item
+                                include ../icons/icon_telegram.svg
+                        noindex
+                            a(href="javascript:void(0)" rel="nofollow").social__item
+                                include ../icons/icon_whatsapp.svg
+
+                    a(href="tel:74956462990").header__phone +7 (495) 646-29-90
+                    a(href="mailto:mail@geoaspect.ru").header__mail mail@geoaspect.ru
+                    a(href="/").header__logo
+                        include ../../public/assets/images/logo.svg
+                    .header__search
+                        input(type="search" placeholder="Искать на сайте").input
+                        span
+                            include ../../public/assets/images/x-mark.svg
+                        button(type="button")
+                            include ../../public/assets/images/search.svg
+                    button(type="button").btn.btn--primary.header__application Оставить заявку
+                    button(type="button").header__menu#headerMenuBtn
+                        span
+                            include ../../public/assets/images/menu.svg
+                        span
+                            include ../../public/assets/images/x-mark.svg
+                    .header__contacts-js
+                .header__inner-bottom
+                    .header__nav
+                        nav
+                            ul
+                                li.header__nav-item.with-submenu
+                                    .header__nav-item-link
+                                        a(href="javascript:void(0)") О компании
+                                        .arrow
+                                            include ../icons/icon_chevron-right.svg
+                                    ul.nav-item__submenu
+                                        li
+                                            a(href="javascript:void(0)") Руководство
+                                        li
+                                            a(href="javascript:void(0)") География деятельности
+                                        li
+                                            a(href="javascript:void(0)") Лицензии
+                                        li
+                                            a(href="javascript:void(0)") Материально техническая база
+                                li.header__nav-item.with-submenu
+                                    .header__nav-item-link
+                                        a(href="javascript:void(0)") Услуги
+                                        .arrow
+                                            include ../icons/icon_chevron-right.svg
+                                    ul.nav-item__submenu
+                                        li
+                                            a(href="javascript:void(0)") Геодезические изыскания
+                                        li
+                                            a(href="javascript:void(0)") Геологические изыскания
+                                        li
+                                            a(href="javascript:void(0)") Экологические изыскания
+                                        li
+                                            a(href="javascript:void(0)") Гидрометеорологические изыскания
+                                        li
+                                            a(href="javascript:void(0)") Исполнительная документация
+                                        li
+                                            a(href="javascript:void(0)") Кадастровые работы
+                                li.header__nav-item
+                                    .header__nav-item-link
+                                        a(href="javascript:void(0)") Проекты
+                                li.header__nav-item.with-submenu
+                                    .header__nav-item-link
+                                        a(href="javascript:void(0)") Карьера
+                                        .arrow
+                                            include ../icons/icon_chevron-right.svg
+                                    ul.nav-item__submenu
+                                        li
+                                            a(href="javascript:void(0)") Кадровая социальная политика
+                                        li
+                                            a(href="javascript:void(0)") Молодым специалистам
+                                        li
+                                            a(href="javascript:void(0)") Вакансии
+                                li.header__nav-item
+                                    .header__nav-item-link
+                                        a(href="javascript:void(0)") Контакты

@@ -1,0 +1,26 @@
+@use 'mixins' as *;
+
+:root {
+    --container: 20px;
+    --max-width: 1600px;
+
+    @include breakpoint(lg) {
+        --container: 26px;
+    }
+
+    @include breakpoint(xl) {
+        --container: 0;
+    }
+}
+
+$container: var(--container);
+$max-width: var(--max-width);
+
+.container {
+    margin: 0 auto;
+    padding: 0 $container;
+    position: relative;
+    width: 100%;
+    max-width: $max-width;
+    box-sizing: border-box;
+}
