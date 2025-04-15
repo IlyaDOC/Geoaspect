@@ -1,2 +1,5 @@
 @use "../../styles/base/mixins" as *;
 
+.fancybox__slide {
+  padding: 0!important;
+}

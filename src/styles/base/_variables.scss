@@ -43,9 +43,9 @@
 
   /* === Типография === */
   --font-main: 'Aeonik Pro TRIAL', sans-serif;
-  --bold-80: 700 80px/1;
-  --bold-64: 700 64px/1;
-  --bold-56: 700 56px/1;
+  --bold-80: 700 80px/1 var(--font-main);
+  --bold-64: 700 64px/1 var(--font-main);
+  --bold-56: 700 56px/1 var(--font-main);
   --bold-48: 700 48px/1 var(--font-main);
   --bold-38: 700 38px/1 var(--font-main);
   --bold-32: 700 32px/1 var(--font-main);

@@ -39,6 +39,7 @@
 
       @include breakpoint(lg) {
         grid-template-columns: repeat(3, fit-content(100%)) 1fr fit-content(100%);
+
       }
 
       @include breakpoint(xl) {
@@ -49,7 +50,13 @@
     }
 
     &-bottom {
+      @include breakpoint(lg) {
+        margin: 0 calc($container * -1);
+      }
 
+      @include breakpoint(xl) {
+        margin: 0 calc((100vw - 1600px) / -2);
+      }
     }
   }
 
@@ -67,7 +74,7 @@
       gap: 16px;
     }
 
-    noindex {
+    a {
       @include flexCenterCenter;
     }
 
@@ -295,7 +302,7 @@
     }
 
     .header__nav {
-      transform: translateX(0);
+      right: 0;
 
 
       .header__nav-item {
@@ -313,17 +320,18 @@
   position: fixed;
   top: 55px;
   width: 100%;
-  left: 0;
+  right: -100%;
   background: white;
-  padding: 24px 20px 0;
+  padding: 24px 20px 20px;
   overflow-y: auto;
+  height: 100%;
   z-index: 1;
-  max-height: calc(100vh - 76px);
-  transform: translateX(100%);
+  max-height: calc(100% - 55px);
   transition: $transition;
 
   @include breakpoint(md) {
     top: 77px;
+    max-height: calc(100% - 77px);
   }
 
   @include breakpoint(lg) {
@@ -496,10 +504,15 @@
             padding-top: 0;
           }
         }
-
-        &:not(:first-child) {
+        & + li a{
           @include breakpoint(lg) {
             border-top: 1px solid $background-black-disabled;
+          }
+
+        }
+        &:not(:first-child) {
+          @include breakpoint(lg) {
+
           }
         }
 

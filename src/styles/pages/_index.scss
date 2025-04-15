@@ -1,3 +1,88 @@
 @use '../base/mixins' as *;
-//@use '../base/variables' as *;
+@use '../base/variables' as *;
 @use '../base/container' as *;
+
+.main-hero {
+  height: 550px;
+  position: relative;
+
+
+  &__inner {
+    color: $content-white-primary;
+    padding-top: 56px;
+    @include flexColumn;
+    height: 100%;
+    align-items: flex-start;
+
+    @include breakpoint(md) {
+      padding: 0;
+      justify-content: center;
+      @include columCountMaxWidth(11);
+    }
+
+    @include breakpoint(lg) {
+      @include columCountMaxWidth(8);
+    }
+
+    @include breakpoint(xl) {
+      @include columnCountMaxXlWidth(6);
+    }
+
+    h1 {
+      margin-bottom: 16px;
+      text-wrap: balance;
+
+      @include breakpoint(lg) {
+        margin-bottom: 24px;
+      }
+
+      @include breakpoint(xl) {
+        margin-bottom: 32px;
+      }
+    }
+
+    p {
+      font: $regular-14;
+
+      @include breakpoint(lg) {
+        font: $regular-16;
+      }
+
+      @include breakpoint(xl) {
+        font: $regular-18;
+      }
+    }
+
+    .btn {
+      margin-top: 24px;
+
+      @include breakpoint(xl) {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    &:after {
+      content: "";
+      position: absolute;
+      background: linear-gradient(270deg, rgba(0, 0, 0, 0.00) 1.39%, rgba(0, 0, 0, 0.60) 57.64%);
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
