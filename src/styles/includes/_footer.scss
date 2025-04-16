@@ -1,2 +1,159 @@
 @use '../base/mixins' as *;
-//@use '../base/variables' as *;
+@use '../base/variables' as *;
+
+
+.footer {
+  background: $content-brown-background;
+  margin-top: 90px;
+
+  @include breakpoint(lg) {
+    margin-top: 120px;
+  }
+
+  @include breakpoint(xl) {
+    margin-top: 150px;
+  }
+
+  &__inner {
+    padding: 56px 0;
+    @include flexColumn;
+    gap: 48px;
+
+    @include breakpoint(md) {
+      padding: 40px 0;
+      gap: 32px;
+    }
+
+    @include breakpoint(lg) {
+      padding: 48px 0;
+      gap: 40px;
+    }
+
+    @include breakpoint(xl) {
+      padding: 64px 0;
+      gap: 56px;
+    }
+
+    &-top {
+
+    }
+
+    &-bottom {
+      @include flexCenterBetween;
+
+
+      &-links {
+        font: $regular-12;
+        @include flexColumn;
+        gap: 2px;
+        color: $content-brown-subprimary;
+
+        @include breakpoint(md) {
+          flex-direction: row;
+          gap: 32px;
+        }
+
+        @include breakpoint(lg) {
+          font: $regular-14;
+          gap: 40px;
+        }
+
+        @include breakpoint(xl) {
+          font: $regular-16;
+          gap: 48px;
+        }
+      }
+    }
+
+
+  }
+
+  &__logo {
+    width: 48px;
+    height: 59px;
+
+    @include breakpoint(xl) {
+      width: 64px;
+      height: 78px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__nav {
+    display: grid;
+    row-gap: 24px;
+    column-gap: 16px;
+
+    @include breakpoint(md) {
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+    }
+
+    @include breakpoint(lg) {
+      gap: 32px;
+    }
+
+    @include breakpoint(xl) {
+      gap: 88px;
+    }
+
+    &-block {
+      @include flexColumn;
+      gap: 16px;
+
+      @include breakpoint(lg) {
+        gap: 24px;
+      }
+
+      &-title {
+        font: $regular-20;
+        padding-bottom: 12px;
+        border-bottom: 1px solid $content-brown-primary;
+
+        @include breakpoint(lg) {
+          font: $regular-22;
+          padding-bottom: 16px;
+        }
+
+        @include breakpoint(xl) {
+          font: $regular-24;
+        }
+      }
+
+      &-items {
+        @include flexColumn;
+        gap: 12px;
+
+        @include breakpoint(lg) {
+          gap: 14px;
+        }
+
+        .footer__nav-block-item {
+          font: $regular-14;
+          list-style: none;
+
+          @include breakpoint(lg) {
+            font: $regular-16;
+          }
+
+          @include breakpoint(xl) {
+            font: $regular-18;
+          }
+
+          .footer__socials {
+            @include flexAlignCenter;
+            gap: 16px;
+
+            a {
+              @include flexCenterCenter;
+            }
+          }
+        }
+      }
+    }
+  }
+}

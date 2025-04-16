@@ -5,40 +5,89 @@
 .popup {
   display: none;
   color: $content-brown-primary;
+  position: relative;
+  background: $content-white-primary;
 
   .f-button {
     display: none;
   }
-
-  &-close {
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    top: 32px;
-    right: 20px;
-  }
-
 }
 
 .popup-request {
   padding: 80px 20px 32px;
   width: 100%;
-  height: 100%;
+
+  @include breakpoint(md) {
+    max-width: 704px;
+    padding: 56px 20px 40px;
+  }
+
+  @include breakpoint(lg) {
+    max-width: 872px;
+    padding: 56px;
+  }
+
+  @include breakpoint(xl) {
+    max-width: 1053px;
+    padding: 54px;
+  }
+
+  &__close {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 32px;
+    right: 20px;
+
+    @include breakpoint(md) {
+      top: 16px;
+      right: 16px;
+    }
+
+    @include breakpoint(lg) {
+      top: 24px;
+      right: 24px;
+    }
+  }
 
   &__inner {
     @include flexColumn;
     gap: 24px;
+
+    @include breakpoint(lg) {
+      gap: 40px;
+    }
+
+    @include breakpoint(xl) {
+      gap: 56px;
+    }
   }
 
   &__title {
     font: $bold-30;
     text-align: center;
+
+    @include breakpoint(md) {
+      font: $bold-32;
+    }
+
+    @include breakpoint(lg) {
+      font: $bold-48;
+    }
   }
 
   &__form {
     form {
       @include flexColumn;
       gap: 14px;
+
+      @include breakpoint(md) {
+        gap: 16px;
+      }
+
+      @include breakpoint(xl) {
+        gap: 24px;
+      }
     }
 
     &-inputs {
@@ -47,16 +96,39 @@
       grid-template-columns: 1fr;
       width: 100%;
 
+      @include breakpoint(md) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include breakpoint(xl) {
+        gap: 16px;
+      }
+
       .input-wrapper {
         input {
           width: 100%;
 
         }
 
-        textarea {
-          border-radius: 30px;
-          height: 140px;
-          resize: none;
+        &.textarea {
+
+          @include breakpoint(md) {
+            grid-column: span 2;
+          }
+
+          textarea {
+            border-radius: 30px;
+            height: 140px;
+            resize: none;
+
+            @include breakpoint(lg) {
+              height: 180px;
+            }
+
+            @include breakpoint(xl) {
+              height: 220px;
+            }
+          }
         }
       }
     }
@@ -64,7 +136,9 @@
     &-agree {
       display: grid;
       grid-template-columns: fit-content(100%) 1fr;
+      align-items: center;
       gap: 8px;
+
       .btn {
         height: fit-content;
       }
@@ -72,7 +146,63 @@
       p {
         font: $regular-10;
         color: $content-brown-subprimary;
+
+        @include breakpoint(md) {
+          font: $regular-14;
+          gap: 16px;
+        }
+
+        @include breakpoint(lg) {
+          gap: 20px;
+        }
       }
+    }
+  }
+}
+
+.popup-success {
+  position: relative;
+  max-width: 320px;
+  padding: 52px 18px;
+
+  @include breakpoint(md) {
+    padding: 56px 24px;
+    max-width: 481px;
+  }
+
+  @include breakpoint(lg) {
+    padding: 64px 32px;
+    max-width: 700px;
+  }
+  &__close {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    @include breakpoint(md) {
+      top: 16px;
+      right: 16px;
+    }
+
+    @include breakpoint(lg) {
+      top: 24px;
+      right: 24px;
+    }
+  }
+
+
+  &__title {
+    font: $bold-26;
+    text-align: center;
+
+    @include breakpoint(md) {
+      font: $bold-32;
+    }
+
+    @include breakpoint(lg) {
+      font: $bold-48;
     }
   }
 }

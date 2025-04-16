@@ -3,3 +3,7 @@
 .fancybox__slide {
   padding: 0!important;
 }
+
+.fancybox__backdrop {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%);
+}
