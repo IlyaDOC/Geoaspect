@@ -16,13 +16,12 @@ block header
                     a(href="/").header__logo
                         include ../../public/assets/images/logo.svg
                     .header__search
-                        input(type="search" placeholder="Искать на сайте").input
-                        span
-                            include ../../public/assets/images/x-mark.svg
-                        button(type="button")
-                            include ../../public/assets/images/search.svg
+                        form
+                            input(type="search" placeholder="Искать на сайте").input
+                            button(type="submit")
+                                include ../../public/assets/images/search.svg
                     button(type="button").btn.btn--primary.header__application Оставить заявку
-                    button(type="button").header__menu#headerMenuBtn
+                    button(type="button").sidebar-trigger#sidebarTrigger
                         span
                             include ../../public/assets/images/menu.svg
                         span

@@ -17,3 +17,48 @@ block main
         .main-hero__image
             +img('main-hero-image.jpg')
 
+    section.main-services
+        .container
+            .main-services__inner
+                .section-title Инженерные изыскания
+                .main-services__items
+                    -
+                        var servicesItems = [
+                            {title: "Инженерно-геодезические изыскания", description: "Выполняем комплекс измерений, вычислений и построений в чертежах и натуре, обеспечивающих правильное и точное размещение зданий и сооружений."},
+                            {title: "Инженерно-геологические изыскания", description: "Выполняем комплекс измерений, вычислений и построений в чертежах и натуре, обеспечивающих правильное и точное размещение зданий и сооружений."},
+                            {title: "Инженерно-экологические изыскания", description: "Минимизируем экологические риски строительства промышленных объектов, оцениваем воздействие объекта на здоровье населения на основе скрининга экологической ситуации."},
+                            {title: "Исполнительная документация", description: "Выполняем комплекс измерений, вычислений и построений в чертежах и натуре, обеспечивающих правильное и точное размещение зданий и сооружений."},
+                            {title: "Кадастровые работы", description: "Минимизируем экологические риски строительства промышленных объектов, оцениваем воздействие объекта на здоровье населения на основе скрининга экологической ситуации."},
+                            {title: "Инженерно-гидрометеорологические изыскания", description: "Определяем климатические и гидрологические характеристики объектов, оказывающих влияние на место строительства."},
+                            {title: "Инженерно-дендрологические изыскания", description: "Минимизируем экологические риски строительства промышленных объектов, оцениваем воздействие объекта на здоровье населения на основе скрининга экологической ситуации."},
+                        ]
+                    each servicesItem, index in servicesItems
+                        a(href="service.html").main-services__item
+                            .main-services__item-title= servicesItem.title
+                            .main-services__item-bottom
+                                .main-services__item-description= servicesItem.description
+                                .main-services__item-icon
+                                    +img(`icon_services-item-${index + 1}.svg`)
+                                    include ../icons/icon_arrow-right--white.svg
+
+    section.main-projects
+        .section-title Проекты
+        .main-projects__slider.swiper
+            .main-projects__slider-navigation
+                button(type="button").button-prev
+                    +img('icon_arrow-left-slider-s-md.svg')
+                    +img('icon_arrow-left-slider-lg.svg')
+                button(type="button").button-next
+                    +img('icon_arrow-right-slider-s-md.svg')
+                    +img('icon_arrow-right-slider-lg.svg')
+            .swiper-wrapper
+                .swiper-slide
+                    +img('main-projects-image.jpg')
+                .swiper-slide
+                    +img('main-projects-image.jpg')
+                .swiper-slide
+                    +img('main-projects-image.jpg')
+
+
+
+

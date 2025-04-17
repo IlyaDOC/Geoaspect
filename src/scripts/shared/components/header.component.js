@@ -1,12 +1,8 @@
-import bodyOverflow from '../features/body-overflow.js';
-
 export default function header() {
     const header = document.getElementById("header");
     if (header) {
         copyContactsInMobileWidth(header);
         headerOnScroll(header);
-        openMobileMenu(header);
-        openSubmenu(header);
     }
 }
 
@@ -18,7 +14,6 @@ function copyContactsInMobileWidth(header) {
         headerContactsJs.append(headerMail.cloneNode(true));
         headerContactsJs.append(headerPhone.cloneNode(true));
     }
-
 }
 
 function headerOnScroll(header) {
@@ -31,36 +26,9 @@ function headerOnScroll(header) {
     });
 }
 
-function openMobileMenu(header) {
-    const headerMenuBtn = document.getElementById("headerMenuBtn");
 
-    if (headerMenuBtn) {
-        headerMenuBtn.addEventListener("click", () => {
-            header.classList.toggle("show-menu");
 
-            if (header.classList.contains("show-menu")) {
-                bodyOverflow.hide();
-            } else {
-                bodyOverflow.show();
-            }
-        });
-    }
-}
 
-function openSubmenu(header) {
-    const navLinks = header.querySelectorAll(".with-submenu");
 
-    if (navLinks) {
-        navLinks.forEach(navLink => {
-            const arrow = navLink.querySelector(".arrow");
-            const subMenu = navLink.querySelector(".nav-item__submenu");
-            if (arrow) {
-                arrow.addEventListener("click", () => {
-                    navLink.classList.toggle("show-submenu");
-                })
-            }
-        });
-    }
-}
 
 
