@@ -16,6 +16,7 @@ export default class CustomSelectComponent {
         this.createOptions(el);
         this.customSelectClickHandler(el);
         this.selectItemsClickHandler(el);
+        this.closeOnWindowClick(el);
     }
 
     createSelect(el) {
@@ -85,6 +86,14 @@ export default class CustomSelectComponent {
                     }
                 })
             })
+        })
+    }
+
+    closeOnWindowClick(el) {
+        document.addEventListener("click", (event)=> {
+            if (!event.target.closest(".custom-select")) {
+                el.classList.remove("active");
+            }
         })
     }
 }

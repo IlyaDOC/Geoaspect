@@ -59,6 +59,60 @@ block main
                 .swiper-slide
                     +img('main-projects-image.jpg')
 
+    section.main-advantages
+        .container
+            .main-advantages__inner
+                .section-title Преимущества
+                .main-advantages__items
+                    include ../components/_advantages-item
+                    - var n = 1;
+                    while n <=3
+                        +advantagesItem(n)
+                        - n++;
+
+    section.main-cooperation
+        .container
+            .main-cooperation__inner
+                .main-cooperation__top
+                    .section-title Сотрудничество с нами
+                    p Оставьте заявку через наш сайт, и мы, ознакомившись, свяжемся с Вами в кратчайшие сроки
+                .main-cooperation__bottom
+                    p Оставьте заявку через наш сайт, и мы, ознакомившись, свяжемся с Вами в кратчайшие сроки
+                    include ../components/_request-form
+
+    section.main-licenses
+        .container
+            .main-licenses__inner
+                .main-licenses__top
+                    .section-title Лицензии
+                    .slider__nav
+                        button(type="button").button-prev
+                        button(type="button").button-next
+                .main-licenses__slider.swiper
+                    .swiper-wrapper
+                        - var n = 1;
+                        while n <= 6
+                            .swiper-slide
+                                +img(`license-image-${n}.jpg`)
+                            - n++;
+
+    section.main-socials
+        .section-title Присоединяйтесь к нашим медиа
+        .main-socials__items
+            .main-socials__item
+                noindex
+                    a(href="javascript:void(0)" rel="nofollow")
+                        include ../icons/icon_telegram.svg
+                        span Telegram
+            .main-socials__item
+                noindex
+                    a(href="javascript:void(0)" rel="nofollow")
+                        include ../icons/icon_whatsapp.svg
+                        span WhatsApp
+        .main-socials__image
+            +img('main-socials-image.jpg')
+
+
 
 
 

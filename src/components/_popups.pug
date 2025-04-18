@@ -4,35 +4,7 @@
         button(data-fancybox-close).popup-request__close
             +img('x-mark.svg')
         .popup-request__title Сотрудничество с нами
-        .popup-request__form
-            form
-                .popup-request__form-inputs
-                    .input-wrapper.input-error
-                        input(type="text" placeholder="ФИО" name="name" required).input
-                        .error-text Поле неверно заполнено
-                    .input-wrapper
-                        input(type="email" placeholder="Электронная почта" name="email" required).input
-                        .error-text Поле неверно заполнено
-                    .input-wrapper
-                        input(type="tel" placeholder="Телефон" name="tel" data-phone-number required).input
-                        .error-text Поле неверно заполнено
-                    .input-wrapper
-                        include _custom-select
-                    .input-wrapper
-                        input(type="file" id="schemeUpload" name="scheme" data-phone-number)
-                        label(for="schemeUpload").input Обзорная схема / ситуационный план
-                        button(type="button").clear-input
-                            +img("x-mark.svg")
-                    .input-wrapper
-                        input(type="file" id="techTask" name="task" data-phone-number)
-                        label(for="techTask").input Прикрепить техническое задание
-                        button(type="button").clear-input
-                            +img("x-mark.svg")
-                    .input-wrapper.textarea
-                        textarea(placeholder="Предварительные проектные решения" name="comment").input
-                .popup-request__form-agree
-                    button(type="submit" data-src="#popupSuccess" data-fancybox).btn.btn--primary Оставить заявку
-                    p Нажимая на кнопку «Отправить заявку», вы соглашаетесь с обработкой ваших персональных данных
+        include ../components/_request-form
 
 // ПОПАП УСПЕШНОЙ ОТПРАВКИ ЗАЯВКИ
 

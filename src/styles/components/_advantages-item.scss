@@ -1,0 +1,64 @@
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+
+.advantages-item {
+  background: $content-brown-background;
+  display: grid;
+  gap: 12px;
+  @include breakpoint(md) {
+    grid-template-columns: repeat(2, 1fr);
+    height: 210px;
+    gap: 18px;
+  }
+
+  @include breakpoint(lg) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    height: auto;
+    grid-template-rows: fit-content(100%) 1fr;
+  }
+
+  @include breakpoint(xl) {
+    gap: 24px;
+  }
+
+  &__image {
+    height: 180px;
+
+    @include breakpoint(md) {
+      height: inherit;
+    }
+
+    @include breakpoint(lg) {
+      height: 220px;
+    }
+
+    @include breakpoint(xl) {
+      height: 280px;
+    }
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__text {
+    padding: 0 18px 18px;
+    font: $regular-14;
+
+    @include breakpoint(md) {
+      padding: 18px 18px 18px 0;
+    }
+
+    @include breakpoint(lg) {
+      padding: 0 24px 24px 24px;
+      font: $regular-16;
+    }
+
+    @include breakpoint(xl) {
+      font: $regular-18;
+      padding: 0 32px 32px 32px;
+    }
+  }
+}

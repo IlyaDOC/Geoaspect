@@ -1,22 +1,22 @@
 export default function fileInput() {
-    const fileInputs = document.querySelectorAll('input[type=\'file\']');
+    const fileInputs = document.querySelectorAll("input[type='file']");
 
     fileInputs.forEach(fileInput => {
-        const inputLabel = fileInput.nextElementSibling;
-        const inputLabelText = inputLabel.textContent;
+        const inputLabelSpan = fileInput.previousElementSibling;
+        const inputLabelSpanText = inputLabelSpan.textContent;
 
         fileInput.addEventListener("change", function() {
             let fileName = this.files[0].name;
             if (fileName) {
-                inputLabel.textContent = fileName;
+                inputLabelSpan.innerText = fileName;
                 fileInput.classList.add("has-file");
             }
         });
 
-        const clearButton = fileInput.closest('.input-wrapper').querySelector('.clear-input');
+        const clearButton = fileInput.closest(".input-wrapper").querySelector(".clear-input");
         clearButton.addEventListener("click", function() {
             fileInput.classList.remove("has-file");
-            inputLabel.textContent = inputLabelText;
+            inputLabelSpan.textContent = inputLabelSpanText;
             fileInput.value = "";
         });
     });

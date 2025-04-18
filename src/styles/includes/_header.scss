@@ -29,7 +29,6 @@
       align-items: center;
       column-gap: 24px;
       padding: 8px 0;
-      background: white;
 
       @include breakpoint(md) {
         padding: 26px 0;
@@ -82,9 +81,21 @@
       width: 24px;
       height: 24px;
 
+      &:hover {
+        svg {
+          path {
+            fill-opacity: 0.3;
+          }
+        }
+      }
+
       svg {
         width: 100%;
         height: 100%;
+
+        path {
+          transition: $transition;
+        }
       }
     }
   }
@@ -95,6 +106,11 @@
     @include breakpoint(md) {
       display: block;
       font: $regular-16;
+      transition: $transition;
+
+      &:hover {
+        color: $content-brown-secondary;
+      }
     }
 
     @include breakpoint(xl) {

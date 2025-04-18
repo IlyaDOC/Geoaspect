@@ -1,0 +1,131 @@
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+
+
+.request__form {
+  form {
+    @include flexColumn;
+    gap: 14px;
+
+    @include breakpoint(md) {
+      gap: 16px;
+    }
+
+    @include breakpoint(xl) {
+      gap: 24px;
+    }
+  }
+
+  &-inputs {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 1fr;
+    width: 100%;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint(xl) {
+      gap: 16px;
+    }
+
+    .input-wrapper {
+
+      &:nth-child(1) {
+        @include breakpoint(md) {
+          order: 1;
+        }
+      }
+
+      &:nth-child(2) {
+        @include breakpoint(md) {
+          order: 3;
+        }
+      }
+
+      &:nth-child(3) {
+        @include breakpoint(md) {
+          order: 5;
+        }
+      }
+
+      &:nth-child(4) {
+        @include breakpoint(md) {
+          order: 2;
+        }
+      }
+
+      &:nth-child(5) {
+        @include breakpoint(md) {
+          order: 4;
+        }
+      }
+
+      &:nth-child(6) {
+        @include breakpoint(md) {
+          order: 6;
+        }
+      }
+
+      &:nth-child(7) {
+        @include breakpoint(md) {
+          order: 7;
+        }
+      }
+
+
+      input {
+        width: 100%;
+
+      }
+
+      &.textarea {
+
+        @include breakpoint(md) {
+          grid-column: span 2;
+        }
+
+        textarea {
+          border-radius: 30px;
+          height: 140px;
+          resize: none;
+
+          @include breakpoint(lg) {
+            height: 180px;
+          }
+
+          @include breakpoint(xl) {
+            height: 220px;
+          }
+        }
+      }
+    }
+  }
+
+  &-agree {
+    display: grid;
+    grid-template-columns: fit-content(100%) 1fr;
+    align-items: center;
+    gap: 8px;
+
+    .btn {
+      height: fit-content;
+    }
+
+    p {
+      font: $regular-10;
+      color: $content-brown-subprimary;
+
+      @include breakpoint(md) {
+        font: $regular-14;
+        gap: 16px;
+      }
+
+      @include breakpoint(lg) {
+        gap: 20px;
+      }
+    }
+  }
+}
+

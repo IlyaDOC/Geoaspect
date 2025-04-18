@@ -62,6 +62,13 @@
           font: $regular-16;
           gap: 48px;
         }
+
+        .footer__devs, .footer__policy {
+          transition: $transition;
+          &:hover {
+            color: $content-brown-secondary;
+          }
+        }
       }
     }
 
@@ -113,6 +120,12 @@
         font: $regular-20;
         padding-bottom: 12px;
         border-bottom: 1px solid $content-brown-primary;
+        transition: $transition;
+
+        &:hover {
+          color: $content-brown-secondary;
+          border-bottom: 1px solid $content-brown-secondary;
+        }
 
         @include breakpoint(lg) {
           font: $regular-22;
@@ -135,6 +148,11 @@
         .footer__nav-block-item {
           font: $regular-14;
           list-style: none;
+          transition: $transition;
+
+          &:hover {
+            color: $content-brown-secondary;
+          }
 
           @include breakpoint(lg) {
             font: $regular-16;
@@ -147,6 +165,23 @@
           .footer__socials {
             @include flexAlignCenter;
             gap: 16px;
+
+            .footer__social {
+
+              svg {
+                path {
+                  transition: $transition;
+                }
+              }
+              &:hover {
+
+                svg {
+                  path {
+                    fill-opacity: 0.3;
+                  }
+                }
+              }
+            }
 
             a {
               @include flexCenterCenter;

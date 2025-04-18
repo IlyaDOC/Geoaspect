@@ -360,7 +360,7 @@
         transform: translateX(-50%);
       }
 
-      .button-prev, .button-next{
+      .button-prev, .button-next {
         width: 30px;
         height: 20px;
         @include flexCenterCenter;
@@ -413,6 +413,263 @@
         object-fit: cover;
         object-position: center;
       }
+    }
+  }
+}
+
+.main-advantages {
+  .section-title {
+    text-align: center;
+  }
+
+  &__items {
+    margin-top: 32px;
+    display: grid;
+    gap: 10px;
+
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    @include breakpoint(xl) {
+      gap: 20px;
+      margin-top: 56px;
+    }
+  }
+}
+
+.main-cooperation {
+
+  &__inner {
+    @include flexColumn;
+    gap: 24px;
+
+    @include breakpoint(lg) {
+      gap: 40px;
+    }
+
+    @include breakpoint(xl) {
+      gap: 56px;
+    }
+  }
+
+  &__top {
+
+    @include breakpoint(md) {
+      display: grid;
+      grid-template-columns: 347px 228px;
+      justify-items: center;
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: 1fr;
+      justify-content: center;
+    }
+
+    > p {
+      display: none;
+
+      @include breakpoint(md) {
+        display: block;
+        font: $regular-14;
+      }
+
+      @include breakpoint(lg) {
+        display: none;
+      }
+    }
+  }
+
+  &__bottom {
+    @include breakpoint(lg) {
+      display: grid;
+      grid-template-columns: 4fr 8fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    @include breakpoint(xl) {
+      grid-template-columns: 520px 925px;
+      justify-content: space-between;
+    }
+
+    > p {
+      display: none;
+
+      @include breakpoint(lg) {
+        display: block;
+        font: $regular-22;
+      }
+
+      @include breakpoint(xl) {
+        font: $regular-24;
+      }
+    }
+  }
+}
+
+.main-licenses {
+  &__top {
+    @include flexCenterBetween;
+    margin-bottom: 32px;
+
+    @include breakpoint(lg) {
+      margin-bottom: 40px;
+    }
+
+    @include breakpoint(xl) {
+      margin-bottom: 56px;
+    }
+
+    .slider__nav {
+      @include flexAlignCenter;
+      gap: 10px;
+
+      button {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        @include flexCenterCenter;
+        background: $content-brown-border;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+          background: $content-brown-secondary;
+        }
+
+        &.disabled {
+          background: $content-brown-background;
+
+          &:before {
+            opacity: 0.2;
+          }
+        }
+
+        &:before {
+          content: "";
+          width: 14px;
+          height: 14px;
+          transition: $transition;
+        }
+
+        &.button-prev {
+          &:before {
+            background: url("../icons/icon_arrow-left--brown.svg") no-repeat center center;
+          }
+        }
+
+        &.button-next {
+          &:before {
+            background: url("../icons/icon_arrow-right--brown.svg") no-repeat center center;
+          }
+        }
+      }
+    }
+  }
+
+  &__slider {
+    margin-right: calc($container * -1);
+
+    @include breakpoint(xl) {
+      margin-right: calc((100vw - 1600px) / -2);
+    }
+
+    .swiper-slide {
+      width: 160px;
+      height: 221px;
+
+      @include breakpoint(md) {
+        width: 219px;
+        height: 303px;
+      }
+
+      @include breakpoint(lg) {
+        width: 272px;
+        height: 375px;
+      }
+    }
+  }
+}
+
+.main-socials {
+  position: relative;
+  height: 400px;
+  display: grid;
+  gap: 32px;
+  padding: 0 20px 0;
+
+
+  .section-title {
+    color: $content-white-primary;
+    align-self: flex-end;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  &__items {
+    @include flexAlignCenter;
+    justify-self: center;
+    gap: 8px;
+    align-items: flex-start;
+
+    .main-socials__item {
+      border-radius: 70px;
+      background: $background-white-primary;
+      padding: 14px 18px;
+      cursor: pointer;
+      transition: $transition;
+
+      &:nth-child(1) {
+        &:hover {
+          background: $colors-telegram-primary;
+        }
+      }
+
+      &:nth-child(2) {
+        &:hover {
+          background: $colors-whatsapp-primary;
+        }
+      }
+
+      svg {
+        path {
+          transition: $transition;
+        }
+      }
+
+      &:hover {
+        color: white;
+
+        svg {
+          path {
+            fill: $content-white-primary;
+          }
+        }
+      }
+
+
+
+      a {
+        @include flexAlignCenter;
+        gap: 4px;
+      }
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    img {
+      object-fit: cover;
+      object-position: center;
     }
   }
 }

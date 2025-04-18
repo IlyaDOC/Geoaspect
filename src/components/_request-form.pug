@@ -1,0 +1,31 @@
+.request__form
+    form
+        .request__form-inputs
+            .input-wrapper.input-error
+                input(type="text" placeholder="ФИО" name="name" required).input
+                .error-text Поле неверно заполнено
+            .input-wrapper
+                input(type="tel" placeholder="Телефон" name="tel" data-phone-number required).input
+                .error-text Поле неверно заполнено
+            .input-wrapper
+                input(type="email" placeholder="Электронная почта" name="email" required).input
+                .error-text Поле неверно заполнено
+            .input-wrapper
+                include _custom-select
+            .input-wrapper
+                label(for="schemeUpload").input
+                    span Обзорная схема / ситуационный план
+                    input(type="file" id="schemeUpload" name="scheme" data-phone-number)
+                    button(type="button").clear-input
+                        +img("x-mark.svg")
+            .input-wrapper
+                label(for="techTask").input
+                    span Прикрепить техническое задание
+                    input(type="file" id="techTask" name="task" data-phone-number)
+                    button(type="button").clear-input
+                        +img("x-mark.svg")
+            .input-wrapper.textarea
+                textarea(placeholder="Предварительные проектные решения" name="comment").input
+        .request__form-agree
+            button(type="submit" data-src="#popupSuccess" data-fancybox).btn.btn--primary Оставить заявку
+            p Нажимая на кнопку «Отправить заявку», вы соглашаетесь с обработкой ваших персональных данных
